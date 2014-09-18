@@ -1,0 +1,19 @@
+{
+    "name": "netgen/content-type-list-bundle",
+    "description": "Netgen ContentType List bundle for eZ Publish",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Netgen",
+            "homepage": "http://www.netgenlabs.com"
+        }
+    ],
+    "require": {
+        "ezsystems/ezpublish-kernel": "*",
+        "netgen/ngclasslist": "*"
+    },
+    "autoload": {
+        "psr-0": { "Netgen\\Bundle\\ContentTypeListBundle": "" }
+    },
+    "target-dir": "Netgen/Bundle/ContentTypeListBundle"
+}

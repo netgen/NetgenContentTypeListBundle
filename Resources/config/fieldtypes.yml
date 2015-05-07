@@ -1,6 +1,6 @@
 parameters:
     ezpublish.fieldType.ngclasslist.class: Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Type
-    ezpublish.fieldType.indexable.ngclasslist.class: %ezpublish.fieldType.indexable.unindexed.class%
+    ezpublish.fieldType.indexable.ngclasslist.class: eZ\Publish\Core\FieldType\Unindexed
 
 services:
     ezpublish.fieldType.ngclasslist:

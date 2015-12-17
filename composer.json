@@ -1,6 +1,6 @@
 {
     "name": "netgen/content-type-list-bundle",
-    "description": "Netgen ContentType List bundle for eZ Publish",
+    "description": "Netgen Content Type List bundle for eZ Publish and eZ Platform",
     "license": "GPL-2.0",
     "authors": [
         {

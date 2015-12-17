@@ -9,8 +9,10 @@
         }
     ],
     "require": {
-        "ezsystems/ezpublish-kernel": "*",
-        "netgen/ngclasslist": "*"
+        "ezsystems/ezpublish-kernel": "*"
+    },
+    "suggest": {
+        "netgen/ngclasslist": "To edit this field type in legacy administration interface"
     },
     "autoload": {
         "psr-0": { "Netgen\\Bundle\\ContentTypeListBundle": "" }

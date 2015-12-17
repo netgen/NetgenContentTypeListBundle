@@ -15,7 +15,6 @@
         "netgen/ngclasslist": "To edit this field type in legacy administration interface"
     },
     "autoload": {
-        "psr-0": { "Netgen\\Bundle\\ContentTypeListBundle": "" }
-    },
-    "target-dir": "Netgen/Bundle/ContentTypeListBundle"
+        "psr-4": { "Netgen\\Bundle\\ContentTypeListBundle\\": "" }
+    }
 }

@@ -3,6 +3,6 @@ parameters:
 
 services:
     ezpublish.fieldType.ngclasslist.converter:
-        class: %ezpublish.fieldType.ngclasslist.converter.class%
+        class: "%ezpublish.fieldType.ngclasslist.converter.class%"
         tags:
             - {name: ezpublish.storageEngine.legacy.converter, alias: ngclasslist, lazy: true, callback: "::create"}

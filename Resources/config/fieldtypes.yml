@@ -4,12 +4,12 @@ parameters:
 
 services:
     ezpublish.fieldType.ngclasslist:
-        class: %ezpublish.fieldType.ngclasslist.class%
+        class: "%ezpublish.fieldType.ngclasslist.class%"
         parent: ezpublish.fieldType
         tags:
             - {name: ezpublish.fieldType, alias: ngclasslist}
 
     ezpublish.fieldType.indexable.ngclasslist:
-        class: %ezpublish.fieldType.indexable.ngclasslist.class%
+        class: "%ezpublish.fieldType.indexable.ngclasslist.class%"
         tags:
             - {name: ezpublish.fieldType.indexable, alias: ngclasslist}

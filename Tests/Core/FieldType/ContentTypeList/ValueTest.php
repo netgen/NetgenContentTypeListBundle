@@ -16,7 +16,7 @@ class ValueTest extends \PHPUnit_Framework_TestCase
     {
         $this->value = new Value(
             array(
-                'identifier0', 'identifier1'
+                'identifier0', 'identifier1',
             )
         );
     }

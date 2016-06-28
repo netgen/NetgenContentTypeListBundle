@@ -11,6 +11,9 @@
     "require": {
         "ezsystems/ezpublish-kernel": "*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
     "suggest": {
         "netgen/ngclasslist": "To edit this field type in legacy administration interface"
     },

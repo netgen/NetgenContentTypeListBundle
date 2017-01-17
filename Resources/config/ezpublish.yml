@@ -2,3 +2,5 @@ system:
     default:
         field_templates:
             - {template: "NetgenContentTypeListBundle::ngclasslist_content_field.html.twig", priority: 10}
+        fielddefinition_settings_templates:
+            - {template: "NetgenContentTypeListBundle:platformui/content_type/view:ngclasslist.html.twig", priority: 10}

@@ -2,10 +2,10 @@
 
 namespace Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList;
 
+use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
 use eZ\Publish\Core\FieldType\FieldType;
 use eZ\Publish\Core\FieldType\Value as BaseValue;
 use eZ\Publish\SPI\FieldType\Value as SPIValue;
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
 
 class Type extends FieldType
 {
@@ -39,7 +39,7 @@ class Type extends FieldType
      */
     public function getName(SPIValue $value)
     {
-        return (string)$value;
+        return (string) $value;
     }
 
     /**
@@ -105,6 +105,22 @@ class Type extends FieldType
     }
 
     /**
+     * Returns if the given $value is considered empty by the field type.
+     *
+     * Default implementation, which performs a "==" check with the value
+     * returned by {@link getEmptyValue()}. Overwrite in the specific field
+     * type, if necessary.
+     *
+     * @param \eZ\Publish\SPI\FieldType\Value|\Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value $value
+     *
+     * @return bool
+     */
+    public function isEmptyValue(SPIValue $value)
+    {
+        return $value === null || $value->identifiers === $this->getEmptyValue()->identifiers;
+    }
+
+    /**
      * Inspects given $inputValue and potentially converts it into a dedicated value object.
      *
      * If given $inputValue could not be converted or is already an instance of dedicate value object,
@@ -114,7 +130,7 @@ class Type extends FieldType
      *
      * @param mixed $inputValue
      *
-     * @return mixed The potentially converted input value.
+     * @return mixed the potentially converted input value
      */
     protected function createValueFromInput($inputValue)
     {
@@ -140,9 +156,10 @@ class Type extends FieldType
      *
      * This is an operation method for {@see acceptValue()}.
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException If the value does not match the expected structure.
      *
      * @param \eZ\Publish\Core\FieldType\Value|\Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value $value
+     *
+     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException if the value does not match the expected structure
      */
     protected function checkValueStructure(BaseValue $value)
     {
@@ -184,21 +201,5 @@ class Type extends FieldType
     protected function getSortInfo(BaseValue $value)
     {
         return false;
-    }
-
-    /**
-     * Returns if the given $value is considered empty by the field type.
-     *
-     * Default implementation, which performs a "==" check with the value
-     * returned by {@link getEmptyValue()}. Overwrite in the specific field
-     * type, if necessary.
-     *
-     * @param \eZ\Publish\SPI\FieldType\Value|\Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value $value
-     *
-     * @return bool
-     */
-    public function isEmptyValue(SPIValue $value)
-    {
-        return $value === null || $value->identifiers == $this->getEmptyValue()->identifiers;
     }
 }

@@ -2,12 +2,12 @@
 
 namespace Netgen\Bundle\ContentTypeListBundle\Tests\Core\Persistence\Legacy\Content\FieldValue\Converter;
 
+use eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter;
 use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldDefinition;
 use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldValue;
 use eZ\Publish\SPI\Persistence\Content\FieldValue;
 use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 use Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter;
-use eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter;
 
 class ContentTypeListConverterTest extends \PHPUnit_Framework_TestCase
 {

@@ -4,8 +4,9 @@ namespace Netgen\Bundle\ContentTypeListBundle\Tests\Core\FieldType\ContentTypeLi
 
 use eZ\Publish\Core\FieldType\Value as BaseValue;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value;
+use PHPUnit\Framework\TestCase;
 
-class ValueTest extends \PHPUnit_Framework_TestCase
+class ValueTest extends TestCase
 {
     /**
      * @var Value
@@ -30,6 +31,6 @@ class ValueTest extends \PHPUnit_Framework_TestCase
     {
         $identifiers = 'identifier0, identifier1';
 
-        $this->assertEquals($identifiers, strval($this->value));
+        $this->assertEquals($identifiers, (string) ($this->value));
     }
 }

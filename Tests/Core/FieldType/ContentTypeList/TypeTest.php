@@ -5,8 +5,9 @@ namespace Netgen\Bundle\ContentTypeListBundle\Tests\Core\FieldType\ContentTypeLi
 use eZ\Publish\Core\FieldType\FieldType;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Type;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value;
+use PHPUnit\Framework\TestCase;
 
-class TypeTest extends \PHPUnit_Framework_TestCase
+class TypeTest extends TestCase
 {
     /**
      * @var Type
@@ -88,7 +89,7 @@ class TypeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \eZ\Publish\Core\Base\Exceptions\InvalidArgumentType
-     * @expectedExceptionMessage  Argument '$value' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'array'
+     * @expectedExceptionMessage  Argument '%argumentName%' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'array'
      */
     public function testAcceptValueWithArrayOfNumbers()
     {
@@ -97,7 +98,7 @@ class TypeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \eZ\Publish\Core\Base\Exceptions\InvalidArgumentType
-     * @expectedExceptionMessage  Argument '$value->identifiers' is invalid: expected value to be of type 'array', got 'string'
+     * @expectedExceptionMessage  Argument '%argumentName%' is invalid: expected value to be of type 'array', got 'string'
      */
     public function testAcceptValueWithValueIdentifiersAsString()
     {
@@ -108,7 +109,7 @@ class TypeTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \eZ\Publish\Core\Base\Exceptions\InvalidArgumentType
-     * @expectedExceptionMessage  Argument '123' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'integer'
+     * @expectedExceptionMessage  Argument '%argumentName%' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'integer'
      */
     public function testAcceptValueWithValueIdentifiersAsArrayOfNumbers()
     {

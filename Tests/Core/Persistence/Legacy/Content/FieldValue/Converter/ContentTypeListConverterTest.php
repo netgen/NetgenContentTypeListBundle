@@ -8,8 +8,9 @@ use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldValue;
 use eZ\Publish\SPI\Persistence\Content\FieldValue;
 use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 use Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter;
+use PHPUnit\Framework\TestCase;
 
-class ContentTypeListConverterTest extends \PHPUnit_Framework_TestCase
+class ContentTypeListConverterTest extends TestCase
 {
     /**
      * @var ContentTypeListConverter

@@ -1,8 +1,6 @@
-parameters:
-    ezpublish.fieldType.ngclasslist.converter.class: Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter
-
 services:
-    ezpublish.fieldType.ngclasslist.converter:
-        class: "%ezpublish.fieldType.ngclasslist.converter.class%"
+    netgen_class_list.field_type.legacy.converter:
+        class: Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter
+        public: false
         tags:
-            - {name: ezpublish.storageEngine.legacy.converter, alias: ngclasslist, lazy: true, callback: "::create"}
+            - { name: ezpublish.storageEngine.legacy.converter, alias: ngclasslist, lazy: true, callback: "::create" }

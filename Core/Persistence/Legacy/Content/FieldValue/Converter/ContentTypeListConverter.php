@@ -31,7 +31,7 @@ class ContentTypeListConverter implements Converter
      */
     public function toFieldValue(StorageFieldValue $value, FieldValue $fieldValue)
     {
-        $data = trim($value->dataText);
+        $data = trim($value->dataText ?? '');
         $fieldValue->data = empty($data) ? [] : explode(',', $data);
     }
 

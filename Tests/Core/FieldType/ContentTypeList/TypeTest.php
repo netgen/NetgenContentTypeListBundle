@@ -57,7 +57,7 @@ class TypeTest extends TestCase
 
     public function testGetEmptyValue()
     {
-        self::assertSame($this->emptyValue, $this->type->getEmptyValue());
+        self::assertSame($this->emptyValue->identifiers, $this->type->getEmptyValue()->identifiers);
     }
 
     public function testGetName()
@@ -73,17 +73,17 @@ class TypeTest extends TestCase
 
     public function testFromHashWithStringArgument()
     {
-        self::assertSame($this->emptyValue, $this->type->fromHash('test'));
+        self::assertSame($this->emptyValue->identifiers, $this->type->fromHash('test')->identifiers);
     }
 
     public function testFromHashWithArrayOfNumbers()
     {
-        self::assertSame($this->emptyValue, $this->type->fromHash([123, 456]));
+        self::assertSame($this->emptyValue->identifiers, $this->type->fromHash([123, 456])->identifiers);
     }
 
     public function testFromHash()
     {
-        self::assertSame($this->value, $this->type->fromHash($this->identifiers));
+        self::assertSame($this->value->identifiers, $this->type->fromHash($this->identifiers)->identifiers);
     }
 
     public function testAcceptValueWithArrayOfStringIdentifiers()

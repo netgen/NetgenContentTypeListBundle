@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Netgen\Bundle\ContentTypeListBundle\Tests\Core\FieldType\ContentTypeList;
 
 use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
@@ -19,7 +21,7 @@ class TypeTest extends TestCase
     /**
      * @var array
      */
-    protected $identifiers = array('identifier0', 'identifier1');
+    protected $identifiers = ['identifier0', 'identifier1'];
 
     /**
      * @var Value
@@ -31,7 +33,7 @@ class TypeTest extends TestCase
      */
     protected $emptyValue;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->type = new Type();
         $this->value = new Value($this->identifiers);
@@ -40,48 +42,48 @@ class TypeTest extends TestCase
 
     public function testInstanceOfFieldType()
     {
-        $this->assertInstanceOf(FieldType::class, $this->type);
+        self::assertInstanceOf(FieldType::class, $this->type);
     }
 
     public function testToHash()
     {
-        $this->assertEquals($this->identifiers, $this->type->toHash($this->value));
+        self::assertSame($this->identifiers, $this->type->toHash($this->value));
     }
 
     public function testGetFieldTypeIdentifier()
     {
-        $this->assertEquals('ngclasslist', $this->type->getFieldTypeIdentifier());
+        self::assertSame('ngclasslist', $this->type->getFieldTypeIdentifier());
     }
 
     public function testGetEmptyValue()
     {
-        $this->assertEquals($this->emptyValue, $this->type->getEmptyValue());
+        self::assertSame($this->emptyValue, $this->type->getEmptyValue());
     }
 
     public function testGetName()
     {
-        $this->assertEquals(implode(', ', $this->identifiers), $this->type->getName($this->value, new FieldDefinition(), 'eng-GB'));
+        self::assertSame(implode(', ', $this->identifiers), $this->type->getName($this->value, new FieldDefinition(), 'eng-GB'));
     }
 
     public function testIsEmptyValue()
     {
-        $this->assertFalse($this->type->isEmptyValue($this->value));
-        $this->assertTrue($this->type->isEmptyValue($this->emptyValue));
+        self::assertFalse($this->type->isEmptyValue($this->value));
+        self::assertTrue($this->type->isEmptyValue($this->emptyValue));
     }
 
     public function testFromHashWithStringArgument()
     {
-        $this->assertEquals($this->emptyValue, $this->type->fromHash('test'));
+        self::assertSame($this->emptyValue, $this->type->fromHash('test'));
     }
 
     public function testFromHashWithArrayOfNumbers()
     {
-        $this->assertEquals($this->emptyValue, $this->type->fromHash(array(123, 456)));
+        self::assertSame($this->emptyValue, $this->type->fromHash([123, 456]));
     }
 
     public function testFromHash()
     {
-        $this->assertEquals($this->value, $this->type->fromHash($this->identifiers));
+        self::assertSame($this->value, $this->type->fromHash($this->identifiers));
     }
 
     public function testAcceptValueWithArrayOfStringIdentifiers()
@@ -92,9 +94,9 @@ class TypeTest extends TestCase
     public function testAcceptValueWithArrayOfNumbers()
     {
         $this->expectException(InvalidArgumentType::class);
-        $this->expectExceptionMessage("Argument '\$value' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'array'");
+        $this->expectExceptionMessage("Argument '\$value' is invalid: expected value to be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', got 'array'");
 
-        $this->type->acceptValue(array(123, 456));
+        $this->type->acceptValue([123, 456]);
     }
 
     public function testAcceptValueWithValueIdentifiersAsString()
@@ -110,9 +112,9 @@ class TypeTest extends TestCase
     public function testAcceptValueWithValueIdentifiersAsArrayOfNumbers()
     {
         $this->expectException(InvalidArgumentType::class);
-        $this->expectExceptionMessage("Argument '123' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'integer'");
+        $this->expectExceptionMessage("Argument '123' is invalid: expected value to be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', got 'integer'");
 
-        $this->value->identifiers = array(123, 456);
+        $this->value->identifiers = [123, 456];
 
         $this->type->acceptValue($this->value);
     }

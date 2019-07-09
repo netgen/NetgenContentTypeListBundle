@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Netgen\Bundle\ContentTypeListBundle\Tests\Core\Persistence\Legacy\Content\FieldValue\Converter;
 
 use eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter;
@@ -17,14 +19,14 @@ class ContentTypeListConverterTest extends TestCase
      */
     protected $converter;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->converter = new ContentTypeListConverter();
     }
 
     public function testInstanceOfConverterInterface()
     {
-        $this->assertInstanceOf(Converter::class, $this->converter);
+        self::assertInstanceOf(Converter::class, $this->converter);
     }
 
     public function testToStorageFieldDefinition()
@@ -45,7 +47,7 @@ class ContentTypeListConverterTest extends TestCase
 
     public function testGetIndexColumn()
     {
-        $this->assertFalse($this->converter->getIndexColumn());
+        self::assertFalse($this->converter->getIndexColumn());
     }
 
     public function testToFieldValue()

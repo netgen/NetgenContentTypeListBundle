@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter;
 
 use eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter;
@@ -30,7 +32,7 @@ class ContentTypeListConverter implements Converter
     public function toFieldValue(StorageFieldValue $value, FieldValue $fieldValue)
     {
         $data = trim($value->dataText);
-        $fieldValue->data = empty($data) ? array() : explode(',', $data);
+        $fieldValue->data = empty($data) ? [] : explode(',', $data);
     }
 
     /**

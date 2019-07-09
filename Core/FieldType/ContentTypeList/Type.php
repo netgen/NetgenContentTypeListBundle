@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList;
 
 use eZ\Publish\API\Repository\Values\ContentType\FieldDefinition;
@@ -72,7 +74,7 @@ class Type extends FieldType
             return new Value();
         }
 
-        $contentTypeIdentifiers = array();
+        $contentTypeIdentifiers = [];
         foreach ($hash as $hashItem) {
             if (!is_string($hashItem)) {
                 continue;
@@ -153,7 +155,6 @@ class Type extends FieldType
      *
      * This is an operation method for {@see acceptValue()}.
      *
-     *
      * @param \eZ\Publish\Core\FieldType\Value|\Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value $value
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException if the value does not match the expected structure
@@ -171,7 +172,7 @@ class Type extends FieldType
         foreach ($value->identifiers as $identifier) {
             if (!is_string($identifier)) {
                 throw new InvalidArgumentType(
-                    "$identifier",
+                    "{$identifier}",
                     'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value',
                     $identifier
                 );

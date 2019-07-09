@@ -14,22 +14,14 @@ use Symfony\Component\Yaml\Yaml;
 
 class NetgenContentTypeListExtension extends Extension implements PrependExtensionInterface
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('fieldtypes.yml');
         $loader->load('storage_engines.yml');
     }
 
-    /**
-     * Allow an extension to prepend the extension configurations.
-     *
-     * @param \Symfony\Component\DependencyInjection\ContainerBuilder $container
-     */
-    public function prepend(ContainerBuilder $container)
+    public function prepend(ContainerBuilder $container): void
     {
         $configFile = __DIR__ . '/../Resources/config/ezpublish.yml';
         $config = Yaml::parse(file_get_contents($configFile));

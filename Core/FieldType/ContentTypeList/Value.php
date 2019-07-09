@@ -23,12 +23,7 @@ class Value extends BaseValue
         $this->identifiers = $identifiers;
     }
 
-    /**
-     * Returns a string representation of the field value.
-     *
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return implode(', ', $this->identifiers);
     }

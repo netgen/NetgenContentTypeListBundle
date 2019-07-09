@@ -40,58 +40,58 @@ class TypeTest extends TestCase
         $this->emptyValue = new Value();
     }
 
-    public function testInstanceOfFieldType()
+    public function testInstanceOfFieldType(): void
     {
         self::assertInstanceOf(FieldType::class, $this->type);
     }
 
-    public function testToHash()
+    public function testToHash(): void
     {
         self::assertSame($this->identifiers, $this->type->toHash($this->value));
     }
 
-    public function testGetFieldTypeIdentifier()
+    public function testGetFieldTypeIdentifier(): void
     {
         self::assertSame('ngclasslist', $this->type->getFieldTypeIdentifier());
     }
 
-    public function testGetEmptyValue()
+    public function testGetEmptyValue(): void
     {
         self::assertSame($this->emptyValue->identifiers, $this->type->getEmptyValue()->identifiers);
     }
 
-    public function testGetName()
+    public function testGetName(): void
     {
         self::assertSame(implode(', ', $this->identifiers), $this->type->getName($this->value, new FieldDefinition(), 'eng-GB'));
     }
 
-    public function testIsEmptyValue()
+    public function testIsEmptyValue(): void
     {
         self::assertFalse($this->type->isEmptyValue($this->value));
         self::assertTrue($this->type->isEmptyValue($this->emptyValue));
     }
 
-    public function testFromHashWithStringArgument()
+    public function testFromHashWithStringArgument(): void
     {
         self::assertSame($this->emptyValue->identifiers, $this->type->fromHash('test')->identifiers);
     }
 
-    public function testFromHashWithArrayOfNumbers()
+    public function testFromHashWithArrayOfNumbers(): void
     {
         self::assertSame($this->emptyValue->identifiers, $this->type->fromHash([123, 456])->identifiers);
     }
 
-    public function testFromHash()
+    public function testFromHash(): void
     {
         self::assertSame($this->value->identifiers, $this->type->fromHash($this->identifiers)->identifiers);
     }
 
-    public function testAcceptValueWithArrayOfStringIdentifiers()
+    public function testAcceptValueWithArrayOfStringIdentifiers(): void
     {
         $this->type->acceptValue($this->identifiers);
     }
 
-    public function testAcceptValueWithArrayOfNumbers()
+    public function testAcceptValueWithArrayOfNumbers(): void
     {
         $this->expectException(InvalidArgumentType::class);
         $this->expectExceptionMessage("Argument '\$value' is invalid: expected value to be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', got 'array'");
@@ -99,7 +99,7 @@ class TypeTest extends TestCase
         $this->type->acceptValue([123, 456]);
     }
 
-    public function testAcceptValueWithValueIdentifiersAsString()
+    public function testAcceptValueWithValueIdentifiersAsString(): void
     {
         $this->expectException(InvalidArgumentType::class);
         $this->expectExceptionMessage("Argument '\$value->identifiers' is invalid: expected value to be of type 'array', got 'string'");
@@ -109,7 +109,7 @@ class TypeTest extends TestCase
         $this->type->acceptValue($this->value);
     }
 
-    public function testAcceptValueWithValueIdentifiersAsArrayOfNumbers()
+    public function testAcceptValueWithValueIdentifiersAsArrayOfNumbers(): void
     {
         $this->expectException(InvalidArgumentType::class);
         $this->expectExceptionMessage("Argument '123' is invalid: expected value to be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', got 'integer'");
@@ -119,7 +119,7 @@ class TypeTest extends TestCase
         $this->type->acceptValue($this->value);
     }
 
-    public function testToPersistenceValue()
+    public function testToPersistenceValue(): void
     {
         $this->type->toPersistenceValue($this->value);
     }

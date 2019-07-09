@@ -24,12 +24,12 @@ class ContentTypeListConverterTest extends TestCase
         $this->converter = new ContentTypeListConverter();
     }
 
-    public function testInstanceOfConverterInterface()
+    public function testInstanceOfConverterInterface(): void
     {
         self::assertInstanceOf(Converter::class, $this->converter);
     }
 
-    public function testToStorageFieldDefinition()
+    public function testToStorageFieldDefinition(): void
     {
         $fieldDefinition = new FieldDefinition();
         $storageDefinition = new StorageFieldDefinition();
@@ -37,7 +37,7 @@ class ContentTypeListConverterTest extends TestCase
         $this->converter->toStorageFieldDefinition($fieldDefinition, $storageDefinition);
     }
 
-    public function testToFieldDefinition()
+    public function testToFieldDefinition(): void
     {
         $fieldDefinition = new FieldDefinition();
         $storageDefinition = new StorageFieldDefinition();
@@ -45,12 +45,12 @@ class ContentTypeListConverterTest extends TestCase
         $this->converter->toFieldDefinition($storageDefinition, $fieldDefinition);
     }
 
-    public function testGetIndexColumn()
+    public function testGetIndexColumn(): void
     {
         self::assertFalse($this->converter->getIndexColumn());
     }
 
-    public function testToFieldValue()
+    public function testToFieldValue(): void
     {
         $fieldDefinition = new FieldValue();
         $storageDefinition = new StorageFieldValue();
@@ -58,7 +58,7 @@ class ContentTypeListConverterTest extends TestCase
         $this->converter->toFieldValue($storageDefinition, $fieldDefinition);
     }
 
-    public function testToStorageValue()
+    public function testToStorageValue(): void
     {
         $fieldDefinition = new FieldValue();
         $storageDefinition = new StorageFieldValue();

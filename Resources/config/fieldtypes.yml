@@ -4,10 +4,10 @@ services:
         public: true
         parent: ezpublish.fieldType
         tags:
-            - { name: ezpublish.fieldType, alias: ngclasslist }
+            - { name: ezplatform.field_type, alias: ngclasslist }
 
     netgen_class_list.field_type.indexable:
         class: eZ\Publish\Core\FieldType\Unindexed
         public: false
         tags:
-            - { name: ezpublish.fieldType.indexable, alias: ngclasslist }
+            - { name: ezplatform.field_type.indexable, alias: ngclasslist }

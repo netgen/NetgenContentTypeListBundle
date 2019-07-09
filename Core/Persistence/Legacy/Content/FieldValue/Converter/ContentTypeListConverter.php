@@ -11,18 +11,6 @@ use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 class ContentTypeListConverter implements Converter
 {
     /**
-     * Factory for current class.
-     *
-     * @note Class should instead be configured as service if it gains dependencies.
-     *
-     * @return \Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter
-     */
-    public static function create()
-    {
-        return new self();
-    }
-
-    /**
      * Converts data from $value to $storageFieldValue.
      *
      * @param \eZ\Publish\SPI\Persistence\Content\FieldValue $value

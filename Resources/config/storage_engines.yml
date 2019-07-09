@@ -3,4 +3,4 @@ services:
         class: Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter
         public: false
         tags:
-            - { name: ezpublish.storageEngine.legacy.converter, alias: ngclasslist, lazy: true, callback: "::create" }
+            - { name: ezplatform.field_type.legacy_storage.converter, alias: ngclasslist }

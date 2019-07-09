@@ -16,15 +16,11 @@ class Value extends BaseValue
     public $identifiers = [];
 
     /**
-     * Constructor.
-     *
      * @param string[] $identifiers
      */
-    public function __construct($identifiers = null)
+    public function __construct(array $identifiers = [])
     {
-        if (is_array($identifiers)) {
-            $this->identifiers = $identifiers;
-        }
+        $this->identifiers = $identifiers;
     }
 
     /**

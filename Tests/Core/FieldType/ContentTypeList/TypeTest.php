@@ -2,7 +2,9 @@
 
 namespace Netgen\Bundle\ContentTypeListBundle\Tests\Core\FieldType\ContentTypeList;
 
+use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
 use eZ\Publish\Core\FieldType\FieldType;
+use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Type;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value;
 use PHPUnit\Framework\TestCase;
@@ -58,7 +60,7 @@ class TypeTest extends TestCase
 
     public function testGetName()
     {
-        $this->assertEquals(implode(', ', $this->identifiers), $this->type->getName($this->value));
+        $this->assertEquals(implode(', ', $this->identifiers), $this->type->getName($this->value, new FieldDefinition(), 'eng-GB'));
     }
 
     public function testIsEmptyValue()
@@ -87,32 +89,29 @@ class TypeTest extends TestCase
         $this->type->acceptValue($this->identifiers);
     }
 
-    /**
-     * @expectedException \eZ\Publish\Core\Base\Exceptions\InvalidArgumentType
-     * @expectedExceptionMessage  Argument '%argumentName%' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'array'
-     */
     public function testAcceptValueWithArrayOfNumbers()
     {
+        $this->expectException(InvalidArgumentType::class);
+        $this->expectExceptionMessage("Argument '\$value' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'array'");
+
         $this->type->acceptValue(array(123, 456));
     }
 
-    /**
-     * @expectedException \eZ\Publish\Core\Base\Exceptions\InvalidArgumentType
-     * @expectedExceptionMessage  Argument '%argumentName%' is invalid: expected value to be of type 'array', got 'string'
-     */
     public function testAcceptValueWithValueIdentifiersAsString()
     {
+        $this->expectException(InvalidArgumentType::class);
+        $this->expectExceptionMessage("Argument '\$value->identifiers' is invalid: expected value to be of type 'array', got 'string'");
+
         $this->value->identifiers = 'test';
 
         $this->type->acceptValue($this->value);
     }
 
-    /**
-     * @expectedException \eZ\Publish\Core\Base\Exceptions\InvalidArgumentType
-     * @expectedExceptionMessage  Argument '%argumentName%' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'integer'
-     */
     public function testAcceptValueWithValueIdentifiersAsArrayOfNumbers()
     {
+        $this->expectException(InvalidArgumentType::class);
+        $this->expectExceptionMessage("Argument '123' is invalid: expected value to be of type 'Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value', got 'integer'");
+
         $this->value->identifiers = array(123, 456);
 
         $this->type->acceptValue($this->value);

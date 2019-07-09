@@ -27,11 +27,6 @@ class ContentTypeListConverterTest extends TestCase
         $this->assertInstanceOf(Converter::class, $this->converter);
     }
 
-    public function testCreate()
-    {
-        $this->assertEquals($this->converter, ContentTypeListConverter::create());
-    }
-
     public function testToStorageFieldDefinition()
     {
         $fieldDefinition = new FieldDefinition();

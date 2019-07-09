@@ -5,6 +5,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="false"
 >
     <testsuites>
         <testsuite name="Netgen\ContentTypeList\Tests">

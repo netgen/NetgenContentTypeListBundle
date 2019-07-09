@@ -8,6 +8,5 @@ services:
 
     netgen_class_list.field_type.indexable:
         class: eZ\Publish\Core\FieldType\Unindexed
-        public: false
         tags:
             - { name: ezplatform.field_type.indexable, alias: ngclasslist }

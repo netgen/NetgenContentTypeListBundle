@@ -1,7 +1,6 @@
 services:
     netgen_class_list.field_type:
         class: Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Type
-        public: true
         parent: ezpublish.fieldType
         tags:
             - { name: ezplatform.field_type, alias: ngclasslist }

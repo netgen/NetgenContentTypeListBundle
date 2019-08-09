@@ -8,12 +8,12 @@ use eZ\Publish\Core\FieldType\Value as BaseValue;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value;
 use PHPUnit\Framework\TestCase;
 
-class ValueTest extends TestCase
+final class ValueTest extends TestCase
 {
     /**
      * @var Value
      */
-    protected $value;
+    private $value;
 
     protected function setUp(): void
     {

@@ -11,27 +11,27 @@ use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Type;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value;
 use PHPUnit\Framework\TestCase;
 
-class TypeTest extends TestCase
+final class TypeTest extends TestCase
 {
     /**
      * @var Type
      */
-    protected $type;
+    private $type;
 
     /**
      * @var array
      */
-    protected $identifiers = ['identifier0', 'identifier1'];
+    private $identifiers = ['identifier0', 'identifier1'];
 
     /**
      * @var Value
      */
-    protected $value;
+    private $value;
 
     /**
      * @var Value
      */
-    protected $emptyValue;
+    private $emptyValue;
 
     protected function setUp(): void
     {

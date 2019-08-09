@@ -10,7 +10,7 @@ use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldValue;
 use eZ\Publish\SPI\Persistence\Content\FieldValue;
 use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 
-class ContentTypeListConverter implements Converter
+final class ContentTypeListConverter implements Converter
 {
     public function toStorageValue(FieldValue $value, StorageFieldValue $storageFieldValue): void
     {

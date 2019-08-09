@@ -10,7 +10,7 @@ use eZ\Publish\Core\FieldType\FieldType;
 use eZ\Publish\Core\FieldType\Value as BaseValue;
 use eZ\Publish\SPI\FieldType\Value as SPIValue;
 
-class Type extends FieldType
+final class Type extends FieldType
 {
     public function getFieldTypeIdentifier(): string
     {

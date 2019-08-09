@@ -6,7 +6,7 @@ namespace Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList;
 
 use eZ\Publish\Core\FieldType\Value as BaseValue;
 
-class Value extends BaseValue
+final class Value extends BaseValue
 {
     /**
      * The list of content type identifiers.

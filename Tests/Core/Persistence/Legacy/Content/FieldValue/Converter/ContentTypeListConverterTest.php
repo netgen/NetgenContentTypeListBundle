@@ -12,12 +12,12 @@ use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 use Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter;
 use PHPUnit\Framework\TestCase;
 
-class ContentTypeListConverterTest extends TestCase
+final class ContentTypeListConverterTest extends TestCase
 {
     /**
      * @var ContentTypeListConverter
      */
-    protected $converter;
+    private $converter;
 
     protected function setUp(): void
     {

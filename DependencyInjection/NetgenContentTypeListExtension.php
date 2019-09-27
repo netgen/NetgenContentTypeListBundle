@@ -17,13 +17,12 @@ final class NetgenContentTypeListExtension extends Extension implements PrependE
     public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('fieldtypes.yml');
-        $loader->load('storage_engines.yml');
+        $loader->load('services.yaml');
     }
 
     public function prepend(ContainerBuilder $container): void
     {
-        $configFile = __DIR__ . '/../Resources/config/ezpublish.yml';
+        $configFile = __DIR__ . '/../Resources/config/ezplatform.yml';
         $config = Yaml::parse(file_get_contents($configFile));
         $container->prependExtensionConfig('ezpublish', $config);
         $container->addResource(new FileResource($configFile));

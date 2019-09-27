@@ -9,3 +9,8 @@ services:
         class: eZ\Publish\Core\FieldType\Unindexed
         tags:
             - { name: ezplatform.field_type.indexable, alias: ngclasslist }
+
+    netgen_class_list.field_type.legacy.converter:
+        class: Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter
+        tags:
+            - { name: ezplatform.field_type.legacy_storage.converter, alias: ngclasslist }

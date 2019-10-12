@@ -7,9 +7,7 @@ Netgen ContentType List Bundle
 [![Latest stable](https://img.shields.io/packagist/v/netgen/content-type-list-bundle.svg?style=flat-square)](https://packagist.org/packages/netgen/content-type-list-bundle)
 [![License](https://img.shields.io/github/license/netgen/NetgenContentTypeListBundle.svg?style=flat-square)](LICENSE)
 
-Netgen ContentType List Bundle is an eZ Publish 5 bundle that provides a field type to select and store a list of content type identifiers.
-
-This repository represents eZ Publish 5 rewrite of the original eZ Publish 4 extension located at [http://github.com/netgen/ngclasslist](/netgen/ngclasslist). However, eZ Publish 4 extension is still required to populate field type through the admin interface.
+Netgen ContentType List Bundle is an eZ Platform bundle that provides a field type to select and store a list of content type identifiers.
 
 License and installation instructions
 -------------------------------------

@@ -94,7 +94,7 @@ final class TypeTest extends TestCase
     public function testAcceptValueWithArrayOfNumbers(): void
     {
         $this->expectException(InvalidArgumentType::class);
-        $this->expectExceptionMessage("Argument '\$value' is invalid: expected value to be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', got 'array'");
+        $this->expectExceptionMessage("Argument '\$value' is invalid: value must be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', not 'array'");
 
         $this->type->acceptValue([123, 456]);
     }
@@ -102,7 +102,7 @@ final class TypeTest extends TestCase
     public function testAcceptValueWithValueIdentifiersAsString(): void
     {
         $this->expectException(InvalidArgumentType::class);
-        $this->expectExceptionMessage("Argument '\$value->identifiers' is invalid: expected value to be of type 'array', got 'string'");
+        $this->expectExceptionMessage("Argument '\$value->identifiers' is invalid: value must be of type 'array', not 'string'");
 
         $this->value->identifiers = 'test';
 
@@ -112,7 +112,7 @@ final class TypeTest extends TestCase
     public function testAcceptValueWithValueIdentifiersAsArrayOfNumbers(): void
     {
         $this->expectException(InvalidArgumentType::class);
-        $this->expectExceptionMessage("Argument '123' is invalid: expected value to be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', got 'integer'");
+        $this->expectExceptionMessage("Argument '123' is invalid: value must be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', not 'integer'");
 
         $this->value->identifiers = [123, 456];
 

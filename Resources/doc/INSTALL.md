@@ -4,37 +4,33 @@ Netgen Content Type List Bundle installation instructions
 Requirements
 ------------
 
-* Recent version of eZ Platform
+* eZ Platform 3+
 
 Installation steps
 ------------------
 
 ### Use Composer
 
-Add the following to your `composer.json` and run `php composer.phar update` to refresh dependencies:
+Run the following command from your project root to install the bundle:
 
-```json
-"require": {
-    "netgen/content-type-list-bundle": "~1.0",
-    "netgen/ngclasslist": "*"
-}
+```bash
+$ composer require netgen/content-type-list-bundle
 ```
 
 ### Activate the bundle
 
-Activate the bundle in `app/AppKernel.php` file.
+Activate the bundle in `config/bundles.php` file.
 
 ```php
-public function registerBundles()
-{
-   $bundles = array(
-       new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-       ...
-       new Netgen\Bundle\ContentTypeListBundle\NetgenContentTypeListBundle()
-   );
+<?php
 
-   ...
-}
+return [
+    ...,
+
+    Netgen\Bundle\ContentTypeListBundle\NetgenContentTypeListBundle::class => ['all' => true],
+
+    ...
+];
 ```
 
 ### Clear the caches

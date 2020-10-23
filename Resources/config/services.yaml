@@ -14,3 +14,16 @@ services:
         class: Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter
         tags:
             - { name: ezplatform.field_type.legacy_storage.converter, alias: ngclasslist }
+
+    netgen_class_list.field_type.form_mapper:
+        class: Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\FormMapper
+        tags:
+            - { name: ezplatform.field_type.form_mapper.value, fieldType: ngclasslist }
+
+    netgen_class_list.field_type.form:
+        class: Netgen\Bundle\ContentTypeListBundle\Form\Type\FieldType\ContentTypeListFieldType
+        arguments:
+            - "@ezpublish.api.service.content_type"
+            - "@ezpublish.api.service.field_type"
+        tags:
+            - { name: form.type }

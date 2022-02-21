@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Netgen\Bundle\ContentTypeListBundle\Form\Type\FieldType;
 
-use eZ\Publish\API\Repository\FieldType;
-use eZ\Publish\SPI\FieldType\Value;
+use Ibexa\Contracts\Core\FieldType\Value;
+use Ibexa\Contracts\Core\Repository\FieldType;
 use Symfony\Component\Form\DataTransformerInterface;
 
 final class FieldValueTransformer implements DataTransformerInterface
 {
     /**
-     * @var \eZ\Publish\API\Repository\FieldType
+     * @var \Ibexa\Contracts\Core\Repository\FieldType
      */
     private $fieldType;
 

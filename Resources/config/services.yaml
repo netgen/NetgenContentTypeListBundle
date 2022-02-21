@@ -1,29 +1,29 @@
 services:
     netgen_class_list.field_type:
         class: Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Type
-        parent: ezpublish.fieldType
+        parent: Ibexa\Core\FieldType\FieldType
         tags:
-            - { name: ezplatform.field_type, alias: ngclasslist }
+            - { name: ibexa.field_type, alias: ngclasslist }
 
     netgen_class_list.field_type.indexable:
-        class: eZ\Publish\Core\FieldType\Unindexed
+        class: Ibexa\Core\FieldType\Unindexed
         tags:
-            - { name: ezplatform.field_type.indexable, alias: ngclasslist }
+            - { name: ibexa.field_type.indexable, alias: ngclasslist }
 
     netgen_class_list.field_type.legacy.converter:
         class: Netgen\Bundle\ContentTypeListBundle\Core\Persistence\Legacy\Content\FieldValue\Converter\ContentTypeListConverter
         tags:
-            - { name: ezplatform.field_type.legacy_storage.converter, alias: ngclasslist }
+            - { name: ibexa.field_type.storage.legacy.converter, alias: ngclasslist }
 
     netgen_class_list.field_type.form_mapper:
         class: Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\FormMapper
         tags:
-            - { name: ezplatform.field_type.form_mapper.value, fieldType: ngclasslist }
+            - { name: ibexa.admin_ui.field_type.form.mapper.value, fieldType: ngclasslist }
 
     netgen_class_list.field_type.form:
         class: Netgen\Bundle\ContentTypeListBundle\Form\Type\FieldType\ContentTypeListFieldType
         arguments:
-            - "@ezpublish.api.service.content_type"
-            - "@ezpublish.api.service.field_type"
+            - "@ibexa.api.service.content_type"
+            - "@ibexa.api.service.field_type"
         tags:
             - { name: form.type }

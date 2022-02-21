@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Netgen\Bundle\ContentTypeListBundle\Tests\Core\FieldType\ContentTypeList;
 
-use eZ\Publish\Core\FieldType\Value as BaseValue;
+use Ibexa\Core\FieldType\Value as BaseValue;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value;
 use PHPUnit\Framework\TestCase;
 

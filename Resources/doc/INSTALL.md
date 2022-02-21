@@ -4,7 +4,7 @@ Netgen Content Type List Bundle installation instructions
 Requirements
 ------------
 
-* eZ Platform 3+
+* Ibexa Platform 4+
 
 Installation steps
 ------------------
@@ -35,7 +35,7 @@ return [
 
 ### Clear the caches
 
-Clear eZ Platform caches.
+Clear Ibexa Platform caches.
 
 ```bash
 php bin/console cache:clear

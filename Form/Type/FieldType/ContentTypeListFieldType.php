@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Netgen\Bundle\ContentTypeListBundle\Form\Type\FieldType;
 
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\FieldTypeService;
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,12 +16,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class ContentTypeListFieldType extends AbstractType
 {
     /**
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     private $contentTypeService;
 
     /**
-     * @var \eZ\Publish\API\Repository\FieldTypeService
+     * @var \Ibexa\Contracts\Core\Repository\FieldTypeService
      */
     private $fieldTypeService;
 
@@ -62,7 +62,7 @@ final class ContentTypeListFieldType extends AbstractType
     }
 
     /**
-     * Returns all content types from eZ Platform.
+     * Returns all content types from Ibexa Platform.
      *
      * @return array<string, string[]>
      */

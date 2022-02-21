@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Netgen\Bundle\ContentTypeListBundle\Tests\Core\FieldType\ContentTypeList;
 
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentType;
-use eZ\Publish\Core\FieldType\FieldType;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentType;
+use Ibexa\Core\FieldType\FieldType;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Type;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value;
 use PHPUnit\Framework\TestCase;

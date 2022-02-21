@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList;
 
-use EzSystems\EzPlatformContentForms\Data\Content\FieldData;
-use EzSystems\EzPlatformContentForms\FieldType\FieldValueFormMapperInterface;
+use Ibexa\Contracts\ContentForms\Data\Content\FieldData;
+use Ibexa\Contracts\ContentForms\FieldType\FieldValueFormMapperInterface;
 use Netgen\Bundle\ContentTypeListBundle\Form\Type\FieldType\ContentTypeListFieldType;
 use Symfony\Component\Form\FormInterface;
 

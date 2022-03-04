@@ -10,10 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 final class ValueTest extends TestCase
 {
-    /**
-     * @var Value
-     */
-    private $value;
+    private Value $value;
 
     protected function setUp(): void
     {

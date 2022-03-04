@@ -10,10 +10,7 @@ use Symfony\Component\Form\DataTransformerInterface;
 
 final class FieldValueTransformer implements DataTransformerInterface
 {
-    /**
-     * @var \Ibexa\Contracts\Core\Repository\FieldType
-     */
-    private $fieldType;
+    private FieldType $fieldType;
 
     public function __construct(FieldType $fieldType)
     {

@@ -14,10 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 final class ContentTypeListConverterTest extends TestCase
 {
-    /**
-     * @var ContentTypeListConverter
-     */
-    private $converter;
+    private ContentTypeListConverter $converter;
 
     protected function setUp(): void
     {

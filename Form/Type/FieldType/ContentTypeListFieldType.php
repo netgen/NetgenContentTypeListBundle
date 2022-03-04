@@ -15,15 +15,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class ContentTypeListFieldType extends AbstractType
 {
-    /**
-     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
-     */
-    private $contentTypeService;
+    private ContentTypeService $contentTypeService;
 
-    /**
-     * @var \Ibexa\Contracts\Core\Repository\FieldTypeService
-     */
-    private $fieldTypeService;
+    private FieldTypeService $fieldTypeService;
 
     public function __construct(ContentTypeService $contentTypeService, FieldTypeService $fieldTypeService)
     {
@@ -36,13 +30,7 @@ final class ContentTypeListFieldType extends AbstractType
         $resolver->setRequired(['field_definition']);
         $resolver->setAllowedTypes('field_definition', FieldDefinition::class);
 
-        $resolver->setDefault(
-            'choices',
-            function (Options $options): array {
-                return $this->getContentTypes();
-            }
-        );
-
+        $resolver->setDefault('choices', fn (Options $options): array => $this->getContentTypes());
         $resolver->setDefault('choice_translation_domain', false);
     }
 

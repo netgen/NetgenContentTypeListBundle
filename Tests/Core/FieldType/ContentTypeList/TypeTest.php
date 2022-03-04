@@ -91,16 +91,6 @@ final class TypeTest extends TestCase
         $this->type->acceptValue([123, 456]);
     }
 
-    public function testAcceptValueWithValueIdentifiersAsString(): void
-    {
-        $this->expectException(InvalidArgumentType::class);
-        $this->expectExceptionMessage("Argument '\$value->identifiers' is invalid: value must be of type 'array', not 'string'");
-
-        $this->value->identifiers = 'test';
-
-        $this->type->acceptValue($this->value);
-    }
-
     public function testAcceptValueWithValueIdentifiersAsArrayOfNumbers(): void
     {
         $this->expectException(InvalidArgumentType::class);

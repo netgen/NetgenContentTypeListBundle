@@ -93,14 +93,6 @@ final class Type extends FieldType
      */
     protected function checkValueStructure(BaseValue $value): void
     {
-        if (!is_array($value->identifiers)) {
-            throw new InvalidArgumentType(
-                '$value->identifiers',
-                'array',
-                $value->identifiers
-            );
-        }
-
         foreach ($value->identifiers as $identifier) {
             if (!is_string($identifier)) {
                 throw new InvalidArgumentType(

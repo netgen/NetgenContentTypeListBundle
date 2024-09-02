@@ -6,6 +6,4 @@ namespace Netgen\Bundle\ContentTypeListBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class NetgenContentTypeListBundle extends Bundle
-{
-}
+final class NetgenContentTypeListBundle extends Bundle {}

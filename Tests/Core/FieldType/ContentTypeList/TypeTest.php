@@ -10,6 +10,7 @@ use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Type;
 use Netgen\Bundle\ContentTypeListBundle\Core\FieldType\ContentTypeList\Value;
 use PHPUnit\Framework\TestCase;
+
 use function implode;
 
 final class TypeTest extends TestCase

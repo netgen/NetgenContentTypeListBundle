@@ -105,7 +105,7 @@ final class Type extends FieldType
         }
     }
 
-    protected function getSortInfo(BaseValue $value)
+    protected function getSortInfo(BaseValue $value): bool
     {
         return false;
     }

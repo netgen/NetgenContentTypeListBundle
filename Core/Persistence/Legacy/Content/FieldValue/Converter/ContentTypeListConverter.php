@@ -12,7 +12,7 @@ use Ibexa\Core\Persistence\Legacy\Content\StorageFieldValue;
 
 use function explode;
 use function implode;
-use function trim;
+use function mb_trim;
 
 final class ContentTypeListConverter implements Converter
 {
@@ -23,7 +23,7 @@ final class ContentTypeListConverter implements Converter
 
     public function toFieldValue(StorageFieldValue $value, FieldValue $fieldValue): void
     {
-        $data = trim($value->dataText ?? '');
+        $data = mb_trim($value->dataText ?? '');
         $fieldValue->data = empty($data) ? [] : explode(',', $data);
     }
 
@@ -31,7 +31,7 @@ final class ContentTypeListConverter implements Converter
 
     public function toFieldDefinition(StorageFieldDefinition $storageDef, FieldDefinition $fieldDef): void {}
 
-    public function getIndexColumn()
+    public function getIndexColumn(): bool
     {
         return false;
     }

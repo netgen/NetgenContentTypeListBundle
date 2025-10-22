@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "ibexa/core": "^5.0"
+        "ibexa/core": "^5.0",
+        "symfony/form": "^7.3"
     },
     "require-dev": {
         "phpunit/phpunit": "^12.0",
-        "symfony/form": "^7.3",
         "ibexa/content-forms": "^5.0"
     },
     "minimum-stability": "dev",

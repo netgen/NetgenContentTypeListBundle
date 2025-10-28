@@ -95,7 +95,7 @@ final class TypeTest extends TestCase
     public function testAcceptValueWithValueIdentifiersAsArrayOfNumbers(): void
     {
         $this->expectException(InvalidArgumentType::class);
-        $this->expectExceptionMessage("Argument '123' is invalid: value must be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', not 'integer'");
+        $this->expectExceptionMessage("Argument '123' is invalid: value must be of type 'Netgen\\Bundle\\ContentTypeListBundle\\Core\\FieldType\\ContentTypeList\\Value', not 'int'");
 
         $this->value->identifiers = [123, 456];
 

@@ -1,10 +1,11 @@
-<phpunit bootstrap="vendor/autoload.php"
-         backupGlobals="false"
-         backupStaticAttributes="false"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.4/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
          colors="true"
+         backupGlobals="false"
+         failOnRisky="true"
+         failOnWarning="true"
          beStrictAboutTestsThatDoNotTestAnything="false"
 >
     <testsuites>
@@ -12,16 +13,16 @@
             <directory>Tests</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist>
+    <source>
+        <include>
             <directory>.</directory>
-            <exclude>
-                <directory>DependencyInjection</directory>
-                <directory>Resources</directory>
-                <directory>Tests</directory>
-                <directory>vendor</directory>
-                <file>NetgenContentTypeListBundle.php</file>
-            </exclude>
-        </whitelist>
-    </filter>
+        </include>
+        <exclude>
+            <directory>DependencyInjection</directory>
+            <directory>Resources</directory>
+            <directory>Tests</directory>
+            <directory>vendor</directory>
+            <file>NetgenContentTypeListBundle.php</file>
+        </exclude>
+    </source>
 </phpunit>

@@ -31,7 +31,7 @@ final class ContentTypeListConverter implements Converter
 
     public function toFieldDefinition(StorageFieldDefinition $storageDef, FieldDefinition $fieldDef): void {}
 
-    public function getIndexColumn()
+    public function getIndexColumn(): bool
     {
         return false;
     }

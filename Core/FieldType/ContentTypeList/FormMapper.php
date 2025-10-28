@@ -20,9 +20,9 @@ final class FormMapper implements FieldValueFormMapperInterface
                         'value',
                         ContentTypeListFieldType::class,
                         [
-                            'required' => $data->fieldDefinition->isRequired,
-                            'label' => $data->fieldDefinition->getName(),
-                            'field_definition' => $data->fieldDefinition,
+                            'required' => $data->getFieldDefinition()->isRequired,
+                            'label' => $data->getFieldDefinition()->getName(),
+                            'field_definition' => $data->getFieldDefinition(),
                             'multiple' => true,
                         ]
                     )

@@ -13,17 +13,11 @@ final class Value extends BaseValue
     /**
      * The list of content type identifiers.
      *
-     * @var string[]
-     */
-    public array $identifiers = [];
-
-    /**
      * @param string[] $identifiers
      */
-    public function __construct(array $identifiers = [])
-    {
-        $this->identifiers = $identifiers;
-    }
+    public function __construct(
+        public array $identifiers = [],
+    ) {}
 
     public function __toString(): string
     {
